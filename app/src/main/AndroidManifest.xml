@@ -12,7 +12,7 @@
         <activity android:name=".MainActivity">
 
         </activity>
-        <activity android:name=".kotlinActivity">
+        <activity android:name=".KotlinActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
