@@ -34,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
 //    since tests are compared on jvm level, hence both can be used
 //    & since kotlin is same as java on jvm level
 
+//    constraint layout has different license than other becoz it is beta, it has beta license which needs to be accepted seprately
+//    bdd - behavior driven development
+//    TDD - test driven development - writing tests first before writing actual code, considering function like a black box
+//    sepration of concerns
+
     public static float calFare(float km,int time){
 
     return 50 + ((km > 5) ? ((km-5) * 12) : 0f) + ((time > 15) ? (time-15) : 0);
