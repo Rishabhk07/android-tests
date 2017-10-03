@@ -6,7 +6,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.*;
 import kotlinx.android.synthetic.main.activity_main.*
 
-class kotlinActivity : AppCompatActivity() {
+class KotlinActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
