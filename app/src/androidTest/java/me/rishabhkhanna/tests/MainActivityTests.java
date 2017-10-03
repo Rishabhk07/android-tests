@@ -18,12 +18,18 @@ import static org.junit.Assert.*;
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTests {
     public MainActivity mainActivity;
+    public KotlinActivity kotlinActivity;
     @Rule
     public ActivityTestRule<MainActivity> mainActivityActivityTessRule = new ActivityTestRule<MainActivity>(MainActivity.class);
+
+    @Rule
+    public ActivityTestRule<KotlinActivity> kotlinActivityTessRule = new ActivityTestRule<KotlinActivity>(KotlinActivity.class);
+
 
     @Before
     public void startActivity(){
         mainActivity = mainActivityActivityTessRule.getActivity();
+        kotlinActivity = kotlinActivityTessRule.getActivity();
     }
 
     @Test
@@ -41,8 +47,24 @@ public class MainActivityTests {
             }
         });
 
+    }
 
+    @Test
+    public void KotlincacFareWorksOnUi(){
+        kotlinActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                ((EditText)kotlinActivity.findViewById(R.id.etOne)).setText("0");
+                ((EditText)kotlinActivity.findViewById(R.id.etTwo)).setText("0");
 
+                ((Button)kotlinActivity.findViewById(R.id.btnCal)).performClick();
+
+                String result = ((TextView)kotlinActivity.findViewById(R.id.tvFare)).getText().toString();
+
+                assertEquals("50.0",result);
+
+            }
+        });
     }
 
 }
